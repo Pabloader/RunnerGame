@@ -8,7 +8,6 @@ import javax.swing.JFrame;
  */
 public class MainFrame extends JFrame implements Runnable {
     private static MainFrame mainFrame;
-    private static MainPanel mainPanel;
 
     public static void main(String[] args) {
         mainFrame = new MainFrame();
@@ -16,7 +15,7 @@ public class MainFrame extends JFrame implements Runnable {
         mainFrame.setTitle("Runner Game");
         mainFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         mainFrame.setResizable(false);
-        mainPanel = new MainPanel();
+        MainPanel mainPanel = MainPanel.getInstance();
         mainFrame.add(mainPanel);
         mainFrame.addKeyListener(mainPanel);
         mainFrame.setVisible(true);
